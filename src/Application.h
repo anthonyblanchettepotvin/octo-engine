@@ -1,6 +1,8 @@
 #pragma once
 
 #include "ofMain.h"
+#include "ofxGui.h"
+#include "Scene.h"
 
 class Application : public ofBaseApp
 {
@@ -21,4 +23,38 @@ public:
 	void windowResized(int w, int h);
 	void dragEvent(ofDragInfo dragInfo);
 	void gotMessage(ofMessage msg);
+
+	void onActorAdded(Actor& actor);
+	void onImageAdded(ofImage& image);
+
+private:
+	// --------------------------------------------------
+	// Scene
+	// --------------------------------------------------
+
+	Scene* scene = nullptr;
+
+	// --------------------------------------------------
+	// UI
+	// --------------------------------------------------
+	
+	// file import panel
+
+	ofxPanel fileImportPnl;
+	ofxButton imageImportBtn;
+
+	void handleImageImportBtnClicked();
+
+	// create actor panel
+
+	ofxPanel createActorPnl;
+	ofxButton createImageActorBtn;
+
+	void handleAddImageActorBtnClicked();
+
+	// actor list panel
+
+	ofxPanel actorListPnl;
+
+	void handleActorTglClicked(bool& value);
 };
