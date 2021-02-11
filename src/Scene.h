@@ -9,6 +9,7 @@ class Scene
 public:
 	Scene(SceneRenderer* renderer);
 
+	void setup();
 	void draw();
 
 	void addImage(ofImage* image);

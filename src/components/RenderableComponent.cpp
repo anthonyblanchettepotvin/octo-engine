@@ -1,6 +1,6 @@
 #include "RenderableComponent.h"
 
-void RenderableComponent::draw()
+void RenderableComponent::draw(ofShader& shader)
 {
 
 }

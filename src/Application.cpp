@@ -5,8 +5,12 @@
 
 void Application::setup()
 {
+	// setup application
+	ofSetFrameRate(60);
+
 	// setup scene
 	this->scene = new Scene(new SceneRenderer());
+	this->scene->setup();
 
 	ofAddListener(this->scene->onActorAdded, this, &Application::onActorAdded);
 	ofAddListener(this->scene->onImageAdded, this, &Application::onImageAdded);

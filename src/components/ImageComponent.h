@@ -8,10 +8,8 @@ class ImageComponent : public RenderableComponent
 public:
 	ImageComponent(ofImage* image);
 
-	virtual void draw();
+	virtual void draw(ofShader& shader);
 
 private:
-	ofShader shader;
-
 	ofImage* image = nullptr;
 };

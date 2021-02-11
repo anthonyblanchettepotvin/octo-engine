@@ -7,12 +7,16 @@ Scene::Scene(SceneRenderer* renderer) : renderer(renderer)
 
 }
 
+void Scene::setup()
+{
+	if (this->renderer != nullptr)
+	{
+		this->renderer->setup();
+	}
+}
+
 void Scene::draw()
 {
-	if (this->renderer != nullptr) {
-		this->renderer->draw();
-	}
-
 	vector<RenderableComponent*> components;
 
 	for (auto& it = this->actors.begin(); it != this->actors.end(); it++)
@@ -22,9 +26,9 @@ void Scene::draw()
 		components.insert(components.begin(), renderables.begin(), renderables.end());
 	}
 
-	for (auto& it = components.begin(); it != components.end(); it++)
+	if (this->renderer != nullptr)
 	{
-		(*it)->draw();
+		this->renderer->draw(components);
 	}
 }
 
