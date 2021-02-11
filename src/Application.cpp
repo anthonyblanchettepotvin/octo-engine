@@ -125,7 +125,6 @@ void Application::handleAddImageActorBtnClicked()
 {
 	Actor* imageActor = new Actor();
 
-	imageActor->addComponent(new TransformComponent());
 	imageActor->addComponent(new ImageComponent(this->scene->getFirstImage()));
 
 	this->scene->addActor(imageActor);
@@ -133,7 +132,7 @@ void Application::handleAddImageActorBtnClicked()
 
 void Application::handleActorTglClicked(bool& value)
 {
-	ofLogNotice() << "actor added";
+	
 }
 
 void Application::dragEvent(ofDragInfo dragInfo)
